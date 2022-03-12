@@ -15,6 +15,7 @@ class HomePage(BasePage):
 
     def browsecateg(self):
         self.mouseOver(HomePageLoc.browseCategories_CSS)
+        self.click(HomePageLoc.cloudComp_CSS)
         pass
 
-    def 
+
