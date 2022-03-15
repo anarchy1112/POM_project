@@ -1,4 +1,4 @@
-from selenium import webdriver
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 
@@ -12,7 +12,7 @@ class BasePage:
         if str(locator).endswith('XPATH'):
             self.driver.find_element(By.XPATH, locator).click()
         if str(locator).endswith('CSS'):
-            self.driver.find_element(By.CSS, locator).click()
+            self.driver.find_element(By.CSS_SELECTOR, locator).click()
         if str(locator).endswith('ID'):
             self.driver.find_element(By.ID, locator).click()
 
@@ -20,7 +20,7 @@ class BasePage:
         if str(locator).endswith('XPATH'):
             self.driver.find_element(By.XPATH, locator).send_keys(value)
         if str(locator).endswith('CSS'):
-            self.driver.find_element(By.CSS, locator).send_keys(value)
+            self.driver.find_element(By.CSS_SELECTOR, locator).send_keys(value)
         if str(locator).endswith('ID'):
             self.driver.find_element(By.ID, locator).send_keys(value)
 
@@ -35,5 +35,18 @@ class BasePage:
 
         action=ActionChains(self.driver)
         action.move_to_element(elem).perform()
+
+    def clearing(self, locator):
+        if str(locator).endswith('XPATH'):
+            self.driver.find_element(By.XPATH,locator).clear()
+        if str(locator).endswith('CSS'):
+            self.driver.find_element(By.CSS_SELECTOR,locator).clear()
+        if str(locator).endswith('ID'):
+            self.driver.find_element(By.ID,locator).clear()
+
+    def textExtraction(self, locator):
+        self.driver.find_element(By.XPATH,locator).text
+
+
 
 

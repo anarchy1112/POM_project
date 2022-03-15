@@ -1,4 +1,8 @@
 
+class BasicInfo:
+    url='https://www.edureka.co/'
+
+
 class GlobalLoc:
     login_CSS=".login_click.login-vd.giTrackElementHeader"
     register_CSS=".signup_click.signup-vd.giTrackElementHeader"
@@ -19,6 +23,7 @@ class HomePageLoc:
     loggedInOptions_XPATH="//span[@class='webinar-profile-name']"
     myprofile_XPATH="//a[normalize-space()='My Profile']"
 
+
 class RegisterPageLoc:
     email_ID='sg_popup_email'
     privacyCheckbox_ID='tc_agree'
@@ -26,6 +31,7 @@ class RegisterPageLoc:
     phoneField_XPATH="//input[@id='sg_popup_phone_no']"
     phoneDropdown_XPATH="//div[@class='inputfld captcha_parent_input error']//select[@aria-label='prefix']"
     password_XPATH="//input[@id='signup_password']"
+    passwordPageText_XPATH='//h4[normalize-space()="Let\'s Get Started"]'
 
 class ProfilePageLoc:
     userEmail_XPATH="//span[@class='user-email']"
