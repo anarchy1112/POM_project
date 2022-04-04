@@ -1,0 +1,3 @@
+1648414527959	geckodriver	INFO	Listening on 127.0.0.1:50162
+1648414530980	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\AZ\\AppData\\Local\\Temp\\rust_mozprofilekFe4mU"
+1648414531905	Marionette	INFO	Marionette enabled
