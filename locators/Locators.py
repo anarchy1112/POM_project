@@ -1,16 +1,19 @@
+from selenium.webdriver.common.by import By
+
 
 class BasicInfo:
     url='https://www.edureka.co/'
 
 
 class GlobalLoc:
-    login_CSS=".login_click.login-vd.giTrackElementHeader"
-    register_CSS=".signup_click.signup-vd.giTrackElementHeader"
+    login_XPATH="//span[@class='login_click login-vd giTrackElementHeader ']"
+    register_XPATH="//span[contains(@class,'signup_click signup-vd giTrackElementHeader')]"
     search_XPATH="//input[@aria-label='Enter Course, Category or keyword']"
 
 
 class HomePageLoc:
-    cloudComp_CSS="body > nav:nth-child(9) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)"
+
+    cloudComp_XPATH="//a[@class='nav-link ga_category_upfront'][normalize-space()='Cloud Computing']"
     devOps_XPATH='//a[contains(@class,"nav-link ga_category_upfront")][normalize-space()="DevOps"]'
     bi_and_Visualization_XPATH='//a[contains(@class,"nav-link ga_category_upfront")][normalize-space()="BI and Visualization"]'
     dataScience_XPATH='//a[contains(@class,"nav-link ga_category_upfront")][normalize-space()="Data Science"]'
@@ -19,19 +22,20 @@ class HomePageLoc:
     bigData_XPATH='//a[contains(@class,"nav-link ga_category_upfront")][normalize-space()="Big Data"]'
     cyberSecurity_XPATH='//a[contains(@class,"nav-link ga_category_upfront")][normalize-space()="Cyber Security"]'
     projectManagement_XPATH='//a[contains(@class,"nav-link ga_category_upfront")][normalize-space()="Project Management and Methodologies"]'
-    browseCategories_CSS="a[class='dropdown-toggle hidden-xs hidden-sm ga_browse_top_cat'] span"
+    browseCategories_XPATH="//a[contains(@class,'dropdown-toggle hidden-xs hidden-sm ga_browse_top_cat')]//span[contains(text(),'Categories')]"
     loggedInOptions_XPATH="//span[@class='webinar-profile-name']"
     myprofile_XPATH="//a[normalize-space()='My Profile']"
 
 
 class RegisterPageLoc:
-    email_ID='sg_popup_email'
-    privacyCheckbox_ID='tc_agree'
+    email_XPATH="//input[@id='sg_popup_email']"
+    privacyCheckbox_XPATH="//input[@id='tc_agree']"
     signUpbtn_XPATH="//button[normalize-space()='Sign Up']"
     phoneField_XPATH="//input[@id='sg_popup_phone_no']"
     phoneDropdown_XPATH="//div[@class='inputfld captcha_parent_input error']//select[@aria-label='prefix']"
     password_XPATH="//input[@id='signup_password']"
     passwordPageText_XPATH='//h4[normalize-space()="Let\'s Get Started"]'
+    startLearningBtn_XPATH="//button[normalize-space()='Start Learning']"
 
 class ProfilePageLoc:
     userEmail_XPATH="//span[@class='user-email']"
