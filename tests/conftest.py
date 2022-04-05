@@ -5,9 +5,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture(params=["chrome", "firefox"], scope="function")
 def setup(request):
-    driver=webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    if request.param=="chrome":
+        driver=webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    elif request.param=="firefox":
+        driver=webdriver.Firefox(executable_path=GeckoDriverManager().install())
     request.cls.driver=driver
     driver.get(BasicInfo.url)
     driver.maximize_window()
